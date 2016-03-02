@@ -25,5 +25,5 @@ var searchDropDownList = document.getElementById('result-list');
 
 function showList(foodPlaces) {
   var list = document.createElement('div');
-  
+  list.className = "list-group-item";
 }

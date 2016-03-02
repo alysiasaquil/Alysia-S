@@ -1,12 +1,20 @@
-.banner {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: auto;
+#search {
+  width: 300px;
 }
-.navbar-form {
-  position: relative;
-  top: 500px;
-  left: 410px;
+#searchBarPanel {
+  padding: 10px;
+  margin-top: 50px;
+  width: 500px;
+  text-align: center;
+}
+
+#icons {
+  padding: 50px 0px 30px 0px;
+  word-spacing: 30px;
+}
+
+.reviews {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }
