@@ -1,0 +1,12 @@
+.banner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+}
+.navbar-form {
+  position: relative;
+  top: 500px;
+  left: 410px;
+}
