@@ -14,7 +14,10 @@
 }
 
 .reviews {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+.star-rating {
+  line-height:32px;
+  font-size:1.25em;
+  cursor: pointer;
 }

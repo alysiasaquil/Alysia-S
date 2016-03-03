@@ -1,29 +1,18 @@
-var foodPlaces = [
-  {
-    name: "Benihana",
-    location: "Irvine, CA",
-    link: "www.yelp.com/"
-  },
-  {
-    name: "Urban Plates",
-    location: "Irvine, CA",
-    link: "www.yelp.com/"
-  },
-  {
-    name: "Ruth's Chris Steak House",
-    location: "Irvine, CA",
-    link: "www.yelp.com/"
-  },
-  {
-    name: "Capital Seafood",
-    location: "Irvine, CA",
-    link: "www.yelp.com"
-  },
-];
+var $star_rating = $('.star-rating .fa');
 
-var searchDropDownList = document.getElementById('result-list');
+var SetRatingStar = function() {
+  return $star_rating.each(function() {
+    if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+      return $(this).removeClass('fa-star-o').addClass('fa-star');
+    } else {
+      return $(this).removeClass('fa-star').addClass('fa-star-o');
+    }
+  });
+};
 
-function showList(foodPlaces) {
-  var list = document.createElement('div');
-  list.className = "list-group-item";
-}
+$star_rating.on('click', function() {
+  $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+  return SetRatingStar();
+});
+
+SetRatingStar();
