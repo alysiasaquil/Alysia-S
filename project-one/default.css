@@ -1,4 +1,4 @@
-#search {
+#keyword {
   width: 300px;
 }
 #searchBarPanel {
@@ -20,4 +20,9 @@
   line-height:32px;
   font-size:1.25em;
   cursor: pointer;
+}
+
+#restaurantListArea {
+  width: 500px;
+  text-align: center;
 }
