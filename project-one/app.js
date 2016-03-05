@@ -80,3 +80,94 @@ function displayRestaurants(restaurant) {
 
   displayResults.appendChild(displayArea);
 }
+
+/* END of FIRST issue */
+/* START of SECOND issue */
+
+var ruthsChrisReviews = [
+  {
+    user: "@NotSoNegativeNancy",
+    rating: 4,
+    review: "Ruth's Chris Steak House by far is my favorite steakhouse. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this steakhouse was so hospitable, down to earth, and fun."
+  },
+  {
+    user: "@AngryAaron",
+    rating: 1,
+    review: "This place isn't good. I can make better steaks at home!!!"
+  },
+  {
+    user: "@HappyHannah",
+    rating: 5,
+    review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!"
+  },
+  {
+    user: "@PositivePapa",
+    rating: 4,
+    review: "Ruth's Chris Steak House by far is my favorite steakhouse. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this steakhouse was so hospitable, down to earth, and fun."
+  },
+  {
+    user: "@AgingArnold",
+    rating: 1,
+    review: "This place isn't good. I can make better steaks at home!!!"
+  },
+  {
+    user: "@DancingDufus",
+    rating: 5,
+    review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!"
+  }
+];
+
+var brioReviews = [
+  {
+    user: "@NotSoNegativeNancy",
+    rating: 4,
+    review: "BRIO Tuscan Grille is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun."
+  },
+  {
+    user: "@AngryAaron",
+    rating: 1,
+    review: "This place isn't good. I can make better steaks at home!!!"
+  },
+  {
+    user: "@HappyHannah",
+    rating: 5,
+    review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!"
+  },
+  {
+    user: "@PositivePapa",
+    rating: 4,
+    review: "BRIO Tuscan Grille is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun."
+  },
+  {
+    user: "@AgingArnold",
+    rating: 1,
+    review: "This place isn't good. I can make better steaks at home!!!"
+  },
+  {
+    user: "@DancingDufus",
+    rating: 5,
+    review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!"
+  }
+];
+
+var displayReviews = document.getElementById('review-area');
+
+var reviewsArea = document.createElement('div');
+reviewsArea.className = 'media';
+reviewsArea.setAttribute('width', '700px');
+
+var userPictureArea = document.createElement('div');
+userPictureArea.setAttribute('class', 'media-left');
+
+var userPictureIcon = document.createElement('img');
+userPictureIcon.className = 'media-object';
+userPictureIcon.setAttribute('width', '200px');
+
+var reviewInfo = document.createElement('div');
+reviewInfo.setAttribute('class', 'media-body');
+
+var reviewTitle = document.createElement('h4');
+reviewTitle.setAttribute('class', 'media-heading');
+
+var reviewText = document.createElement('p');
+reviewText.setAttribute('width', '500px');
