@@ -143,6 +143,7 @@ function restaurant(data) {
   var imageArea = document.createElement('div');
 
   var restaurantPicture = document.createElement('img');
+
   restaurantPicture.src = data.image;
 
   var restaurantInfo = document.createElement('div');
@@ -163,8 +164,31 @@ function restaurant(data) {
   return theRestaurant;
 }
 
+
 function reviews(restaurant) {
-var reviewResults = document.getElementById('reviews');
+  var reviewResults = document.getElementById('reviews');
+
+  var header = document.createElement('h3');
+  header.textContent = 'Start your own review for this business.'
+
+  var textArea = document.createElement('textarea');
+  textArea.className = 'form-control';
+  textArea.setAttribute('rows','10');
+  textArea.setAttribute('placeholder', 'Start writing!');
+
+  var buttonArea = document.createElement('div');
+
+  var submit = document.createElement('button');
+  submit.className = 'btn btn-default',
+  submit.setAttribute('type','submit');
+  submit.setAttribute('href','#');
+  submit.textContent = 'Submit Review';
+
+  reviewResults.appendChild(header);
+  reviewResults.appendChild(textArea);
+  buttonArea.appendChild(submit);
+  reviewResults.appendChild(buttonArea);
+
   for(var i = 0; i < restaurant.reviews.length; i++) {
 
     var reviewsArea = document.createElement('div');
@@ -204,11 +228,3 @@ var reviewResults = document.getElementById('reviews');
   }
   return reviewResults;
 };
-
-
-
-// 1. listen for searches
-// 2. find restaurant that matches search
-// 3. create HTML element for the restaurant
-// 4. create HTML element for reviews
-// 5. attach restaurant and reviews element to the page
