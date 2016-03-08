@@ -115,78 +115,100 @@ search.addEventListener('submit', function(event) {
   event.preventDefault();
   var keyword = document.getElementById('keyword');
   for (var i = 0; i < myRestaurants.length; i++) {
+
     if (myRestaurants[i].name === keyword.value) {
-      displayRestaurants(myRestaurants[i]);
+      var theRestaurant = restaurant(myRestaurants[i]);
+      var myReviews = reviews(myRestaurants[i]);
+      displayRestaurants(theRestaurant, myReviews);
     };
+
   }
 });
 
-function displayRestaurants(restaurant) {
+function displayRestaurants(theRestaurant, reviews) {
   var displayResults = document.getElementById('results')
-  displayResults.className = 'panel panel-default'
   displayResults.setAttribute('width', '700px');
 
-  var displayArea = document.createElement('div');
-  displayArea.className = 'media';
-  displayArea.setAttribute('width', '700px');
+  displayResults.appendChild(theRestaurant);
+
+  for(var i = 0; i < reviews.length; i++) {
+    displayResults.appendChild(reviews[i]);
+  }
+}
+
+function restaurant(data) {
+
+  var theRestaurant = document.createElement('div');
 
   var imageArea = document.createElement('div');
-  imageArea.setAttribute('class', 'media-left');
 
   var restaurantPicture = document.createElement('img');
-  restaurantPicture.className = 'media-object';
-  restaurantPicture.setAttribute('width', '200px');
-  restaurantPicture.src = restaurant.image;
+  restaurantPicture.src = data.image;
 
   var restaurantInfo = document.createElement('div');
-  restaurantInfo.setAttribute('class', 'media-body');
 
-  var restaurantName = document.createElement('h4');
-  restaurantName.className = 'media-heading';
-  restaurantName.textContent = restaurant.name;
+  var restaurantName = document.createElement('h1');
+  restaurantName.textContent = data.name;
 
   var restaurantDescription = document.createElement('p');
-  restaurantDescription.setAttribute('width', '500px');
-  restaurantDescription.textContent = restaurant.description;
-
-  var reviewsArea = document.createElement('div');
-  reviewsArea.className = 'media';
-  reviewsArea.setAttribute('width', '700px');
-
-  var userPictureArea = document.createElement('div');
-  userPictureArea.setAttribute('class', 'media-left');
-
-  var userPictureIcon = document.createElement('img');
-  userPictureIcon.className = 'media-object';
-  userPictureIcon.setAttribute('width', '200px');
-  userPictureIcon.src = restaurant.userIcon;
-
-  var reviewInfo = document.createElement('div');
-  reviewInfo.setAttribute('class', 'media-body');
-
-  var reviewTitle = document.createElement('h4');
-  reviewTitle.setAttribute('class', 'media-heading');
-  reviewTitle.textContent = 'Review';
-
-  var reviewText = document.createElement('p');
-  reviewText.setAttribute('width', '500px');
-  reviewText.textContent = restaurant.reviews;
-
-  reviewInfo.appendChild(reviewText);
-  reviewInfo.appendChild(reviewTitle);
-  reviewsArea.appendChild(reviewInfo);
-
-  userPictureArea.appendChild(userPictureIcon);
-  reviewsArea.appendChild(userPictureArea);
-
-  reviewsArea.appendChild(displayArea);
+  restaurantDescription.textContent = data.description;
 
   restaurantInfo.appendChild(restaurantDescription);
-  displayArea.appendChild(restaurantName);
-  displayArea.appendChild(restaurantInfo);
+  theRestaurant.appendChild(restaurantName);
+  theRestaurant.appendChild(restaurantInfo);
 
   imageArea.appendChild(restaurantPicture);
-  displayArea.appendChild(imageArea);
+  theRestaurant.appendChild(imageArea);
 
-  displayResults.appendChild(displayArea);
+  return theRestaurant;
 }
+
+function reviews(restaurant) {
+var reviewResults = document.getElementById('reviews');
+  for(var i = 0; i < restaurant.reviews.length; i++) {
+
+    var reviewsArea = document.createElement('div');
+    reviewsArea.className = 'media';
+    reviewsArea.setAttribute('width', '300px');
+
+    var userPictureArea = document.createElement('div');
+    userPictureArea.setAttribute('class', 'media-left');
+
+    var userPictureIcon = document.createElement('img');
+    userPictureIcon.className = 'media-object';
+    userPictureIcon.setAttribute('width', '100px');
+    userPictureIcon.src = restaurant.reviews[i].userIcon;
+
+    var rating = document.createElement('div');
+    rating.textContent = "User's Rating: " + restaurant.reviews[i].rating;
+
+    var reviewInfo = document.createElement('div');
+    reviewInfo.setAttribute('class', 'media-body');
+
+    var reviewTitle = document.createElement('h4');
+    reviewTitle.setAttribute('class', 'media-heading');
+    reviewTitle.textContent = restaurant.reviews[i].user + "'s Review";
+
+    var reviewText = document.createElement('p');
+    reviewText.setAttribute('width', '500px');
+    reviewText.textContent = restaurant.reviews[i].review;
+
+    reviewInfo.appendChild(reviewTitle);
+    reviewInfo.appendChild(rating);
+    reviewInfo.appendChild(reviewText);
+    reviewsArea.appendChild(reviewInfo);
+
+    userPictureArea.appendChild(userPictureIcon);
+    reviewsArea.appendChild(userPictureArea);
+    reviewResults.appendChild(reviewsArea);
+  }
+  return reviewResults;
+};
+
+
+
+// 1. listen for searches
+// 2. find restaurant that matches search
+// 3. create HTML element for the restaurant
+// 4. create HTML element for reviews
+// 5. attach restaurant and reviews element to the page

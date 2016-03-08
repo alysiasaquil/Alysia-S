@@ -11,17 +11,3 @@
   padding: 30px 0px 50px 0px;
   word-spacing: 30px;
 }
-
-.reviews {
-}
-
-.star-rating {
-  line-height:32px;
-  font-size:1.25em;
-  cursor: pointer;
-}
-
-#restaurantListArea {
-  width: 500px;
-  text-align: center;
-}
