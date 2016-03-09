@@ -172,6 +172,26 @@ function restaurant(data) {
 
 
 function reviews(restaurant) {
+
+  /*  for(var i = 1; i < 6; i++) {
+      var form = document.createElement('form');
+
+      var input = document.createElement('input');
+      input.className = 'star star-' + i;
+      input.setAttribute('value', i);
+      input.setAttribute('type', 'radio')
+
+      var label = document.createElement('label');
+      label.className = 'star star-' + i;
+      label.setAttribute('for', 'star-' + i);
+
+      form.appendChild(input);
+      form.appendChild(label);
+      starRating.appendChild(form);
+      reviewResults.appendChild(starRating);
+    }
+  */
+
   var reviewResults = document.getElementById('reviews');
 
   while (reviewResults.firstChild) {
@@ -181,32 +201,17 @@ function reviews(restaurant) {
   var header = document.createElement('h3');
   header.textContent = 'Start your own review for this business.'
 
-  var starRating = document.createElement('div');
-  starRating.className = 'stars';
-
-  for(var i = 1; i < 6; i++) {
-    var form = document.createElement('form');
-
-    var input = document.createElement('input');
-    input.className = 'star star-' + i;
-    input.setAttribute('value', i);
-    input.setAttribute('type', 'radio')
-
-    var label = document.createElement('label');
-    label.className = 'star star-' + i;
-    label.setAttribute('for', 'star-' + i);
-
-    form.appendChild(input);
-    form.appendChild(label);
-    starRating.appendChild(form);
-    reviewResults.appendChild(starRating);
-  }
-
   var textArea = document.createElement('textarea');
   textArea.className = 'form-control';
   textArea.setAttribute('id', 'write');
   textArea.setAttribute('rows','10');
   textArea.setAttribute('placeholder', 'Start writing!');
+
+  var addLocation = document.createElement('input');
+  addLocation.setAttribute('id', 'location');
+  addLocation.setAttribute('type', 'text');
+  addLocation.setAttribute('class', 'form-control');
+  addLocation.setAttribute('placeholder', 'Add Your Location');
 
   var buttonArea = document.createElement('div');
 
@@ -221,6 +226,7 @@ function reviews(restaurant) {
 
   reviewResults.appendChild(header);
   reviewResults.appendChild(textArea);
+  reviewResults.appendChild(addLocation);
   buttonArea.appendChild(submit);
   reviewResults.appendChild(buttonArea);
 
@@ -228,12 +234,16 @@ function reviews(restaurant) {
     var write = document.getElementById('write').value;
     var myReview = new Object();
     myReview.user = '@alysiasaquil';
-    myReview.userIcon = 'alysia.jpg';
+    myReview.userIcon = 'project-one-images/alysia.jpg';
     myReview.rating = '';
     myReview.review = write;
 
+    var location = document.getElementById('location').value;
+    var myLocation = new Object();
+    myLocation.addLocation = location;
+    console.log(myLocation.addLocation);
+
     restaurant.reviews.unshift(myReview);
-    console.log(myReview.review);
 
     var reviewsArea = document.createElement('div');
     reviewsArea.className = 'media';
@@ -261,8 +271,12 @@ function reviews(restaurant) {
     reviewText.setAttribute('width', '500px');
     reviewText.textContent = myReview.review;
 
+    var locationText = document.createElement('p');
+    locationText.textContent = "Location: " + myLocation.addLocation;
+
     reviewInfo.appendChild(reviewTitle);
     reviewInfo.appendChild(rating);
+    reviewInfo.appendChild(locationText);
     reviewInfo.appendChild(reviewText);
     reviewsArea.appendChild(reviewInfo);
 
