@@ -113,6 +113,8 @@ var myRestaurants = [
   }
 ];
 
+/* code to display restaurants and reviews when an event occurs */
+
 var search = document.getElementById('search');
 var keyword = document.getElementById('keyword');
 search.addEventListener('submit', function(event) {
@@ -128,10 +130,13 @@ search.addEventListener('submit', function(event) {
   }
 });
 
+/* code to display restaurants */
+
 function displayRestaurants(theRestaurant, reviews) {
   var displayResults = document.getElementById('results')
   displayResults.setAttribute('width', '700px');
 
+//removes search result when new search occurs
   while(displayResults.firstChild) {
     displayResults.removeChild(displayResults.firstChild);
   }
@@ -141,10 +146,10 @@ function displayRestaurants(theRestaurant, reviews) {
   for(var i = 0; i < reviews.length; i++) {
     displayResults.appendChild(reviews[i]);
   }
-}
+};
+/* code that creates a restaurant element */
 
 function restaurant(data) {
-
   var theRestaurant = document.createElement('div');
 
   var imageArea = document.createElement('div');
@@ -168,32 +173,14 @@ function restaurant(data) {
   theRestaurant.appendChild(imageArea);
 
   return theRestaurant;
-}
+};
 
+/* code that creates elements to display reviews */
 
 function reviews(restaurant) {
-
-  /*  for(var i = 1; i < 6; i++) {
-      var form = document.createElement('form');
-
-      var input = document.createElement('input');
-      input.className = 'star star-' + i;
-      input.setAttribute('value', i);
-      input.setAttribute('type', 'radio')
-
-      var label = document.createElement('label');
-      label.className = 'star star-' + i;
-      label.setAttribute('for', 'star-' + i);
-
-      form.appendChild(input);
-      form.appendChild(label);
-      starRating.appendChild(form);
-      reviewResults.appendChild(starRating);
-    }
-  */
-
   var reviewResults = document.getElementById('reviews');
 
+//removes reviews when a new search occurs
   while (reviewResults.firstChild) {
     reviewResults.removeChild(reviewResults.firstChild);
   }
@@ -201,6 +188,7 @@ function reviews(restaurant) {
   var header = document.createElement('h3');
   header.textContent = 'Start your own review for this business.'
 
+// code for writing your own review
   var textArea = document.createElement('textarea');
   textArea.className = 'form-control';
   textArea.setAttribute('id', 'write');
@@ -223,13 +211,95 @@ function reviews(restaurant) {
   submit.setAttribute('data-id', restaurant.id);
   submit.textContent = 'Submit Review';
 
-
   reviewResults.appendChild(header);
   reviewResults.appendChild(textArea);
   reviewResults.appendChild(addLocation);
   buttonArea.appendChild(submit);
   reviewResults.appendChild(buttonArea);
 
+//creating element to display list of reviews
+  for(var i = 0; i < restaurant.reviews.length; i++) {
+
+    var reviewsArea = document.createElement('div');
+    reviewsArea.className = 'media';
+    reviewsArea.setAttribute('width', '300px');
+
+    var userPictureArea = document.createElement('div');
+    userPictureArea.setAttribute('class', 'media-left');
+
+    var userPictureIcon = document.createElement('img');
+    userPictureIcon.className = 'media-object';
+    userPictureIcon.setAttribute('width', '100px');
+    userPictureIcon.src = restaurant.reviews[i].userIcon;
+
+    var rating = document.createElement('div');
+    rating.textContent = "User's Rating: " + restaurant.reviews[i].rating;
+
+    var reviewInfo = document.createElement('div');
+    reviewInfo.setAttribute('class', 'media-body');
+
+    var reviewTitle = document.createElement('h4');
+    reviewTitle.setAttribute('class', 'media-heading');
+    reviewTitle.textContent = restaurant.reviews[i].user + "'s Review";
+
+    var reviewText = document.createElement('p');
+    reviewText.setAttribute('width', '500px');
+    reviewText.textContent = restaurant.reviews[i].review;
+
+    var vote = document.createElement('p');
+    vote.textContent = 'Vote this review...';
+
+    var votingButtons = document.createElement('div');
+    votingButtons.className = 'btn-group';
+    votingButtons.setAttribute('role', 'group');
+    votingButtons.setAttribute('aria-label', 'buttonGroup');
+
+    var useful = document.createElement('button');
+    useful.setAttribute('type', 'button');
+    useful.setAttribute('class', 'btn btn-default inputVote');
+    useful.textContent = "Useful";
+
+    var funny = document.createElement('button');
+    funny.setAttribute('type', 'button');
+    funny.setAttribute('class', 'btn btn-default inputVote');
+    funny.textContent = "Funny";
+
+    var cool = document.createElement('button');
+    cool.setAttribute('type', 'button');
+    cool.setAttribute('class', 'btn btn-default inputVote');
+    cool.textContent = "Cool";
+
+    var displayThanks = document.createElement('div');
+
+    votingButtons.appendChild(useful);
+    votingButtons.appendChild(funny);
+    votingButtons.appendChild(cool);
+    votingButtons.appendChild(displayThanks);
+
+    reviewInfo.appendChild(reviewTitle);
+    reviewInfo.appendChild(rating);
+    reviewInfo.appendChild(reviewText);
+    reviewInfo.appendChild(vote);
+    reviewInfo.appendChild(votingButtons);
+    reviewsArea.appendChild(reviewInfo);
+
+    userPictureArea.appendChild(userPictureIcon);
+    reviewsArea.appendChild(userPictureArea);
+    reviewResults.appendChild(reviewsArea);
+
+    votingButtons.addEventListener('click', thankYou);
+
+    function thankYou(event) {
+      var groupButton = event.target.parentElement;
+      var thankyou = groupButton.getElementsByTagName('div')[0];
+
+      var displayMessage = document.createElement('p');
+      displayMessage.textContent = "Thank you for your vote!";
+      thankyou.appendChild(displayMessage);
+    }
+  }
+
+// event listener to submit review
   submit.addEventListener('click', function(){
     var write = document.getElementById('write').value;
     var myReview = new Object();
@@ -245,6 +315,7 @@ function reviews(restaurant) {
 
     restaurant.reviews.unshift(myReview);
 
+//creating element to display own review
     var reviewsArea = document.createElement('div');
     reviewsArea.className = 'media';
     reviewsArea.setAttribute('width', '300px');
@@ -285,43 +356,5 @@ function reviews(restaurant) {
     reviewResults.appendChild(reviewsArea);
 
   });
-
-  for(var i = 0; i < restaurant.reviews.length; i++) {
-
-    var reviewsArea = document.createElement('div');
-    reviewsArea.className = 'media';
-    reviewsArea.setAttribute('width', '300px');
-
-    var userPictureArea = document.createElement('div');
-    userPictureArea.setAttribute('class', 'media-left');
-
-    var userPictureIcon = document.createElement('img');
-    userPictureIcon.className = 'media-object';
-    userPictureIcon.setAttribute('width', '100px');
-    userPictureIcon.src = restaurant.reviews[i].userIcon;
-
-    var rating = document.createElement('div');
-    rating.textContent = "User's Rating: " + restaurant.reviews[i].rating;
-
-    var reviewInfo = document.createElement('div');
-    reviewInfo.setAttribute('class', 'media-body');
-
-    var reviewTitle = document.createElement('h4');
-    reviewTitle.setAttribute('class', 'media-heading');
-    reviewTitle.textContent = restaurant.reviews[i].user + "'s Review";
-
-    var reviewText = document.createElement('p');
-    reviewText.setAttribute('width', '500px');
-    reviewText.textContent = restaurant.reviews[i].review;
-
-    reviewInfo.appendChild(reviewTitle);
-    reviewInfo.appendChild(rating);
-    reviewInfo.appendChild(reviewText);
-    reviewsArea.appendChild(reviewInfo);
-
-    userPictureArea.appendChild(userPictureIcon);
-    reviewsArea.appendChild(userPictureArea);
-    reviewResults.appendChild(reviewsArea);
-  }
   return reviewResults;
 };
