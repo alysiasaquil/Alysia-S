@@ -3,6 +3,7 @@ var myRestaurants = [
     name: "Ruth's Chris Steak House",
     location: "Irvine, CA",
     rating: 5,
+    id: 1,
     image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/project-one-images/Ruths-Chris-Exterior-Night.jpg",
     description: "The best steakhouse in Irvine, California is Ruth's Chris Steak House. Treat yourself to a USDA Prime steak that arrives sizzling on a 500 degree plate.",
     reviews: [
@@ -30,6 +31,7 @@ var myRestaurants = [
     name: "BRIO Tuscan Grille",
     location: "Irvine, CA",
     rating: 4,
+    id: 2,
     image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/project-one-images/brio.jpg",
     description: "At BRIO, we celebrate life, love & all things Italian!  In our restaurants, the chef-inspired cuisine at BRIO is simply prepared using the finest and freshest ingredients, with an emphasis on high-quality steaks, housemade pasta specialties and flatbreads prepared in an authentic Italian oven.",
     reviews: [
@@ -57,6 +59,7 @@ var myRestaurants = [
     name: "Lazy Dog Restaurant & Bar",
     location: "Irvine, CA",
     rating: 3,
+    id: 3,
     image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/project-one-images/Ruths-Chris-Exterior-Night.jpg",
     description: "Lazy Dog Restaurant & Bar is a family-run Southern California based restaurant group.",
     reviews: [
@@ -78,6 +81,7 @@ var myRestaurants = [
     name: "BJ's Restaurant & Brewhouse",
     location: "Irvine, CA",
     rating: 2,
+    id: 4,
     image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/project-one-images/Ruths-Chris-Exterior-Night.jpg",
     description: "Welcome to BJ's Restaurant & Brewhouse! We're the place to go when you're looking for amazing craft beer, delicious pizza selections, and an extensive menu of high quality food--all in a fun, casual, accommodating setting.",
     reviews: [
@@ -110,10 +114,9 @@ var myRestaurants = [
 ];
 
 var search = document.getElementById('search');
-
+var keyword = document.getElementById('keyword');
 search.addEventListener('submit', function(event) {
   event.preventDefault();
-  var keyword = document.getElementById('keyword');
   for (var i = 0; i < myRestaurants.length; i++) {
 
     if (myRestaurants[i].name === keyword.value) {
@@ -128,6 +131,10 @@ search.addEventListener('submit', function(event) {
 function displayRestaurants(theRestaurant, reviews) {
   var displayResults = document.getElementById('results')
   displayResults.setAttribute('width', '700px');
+
+  while(displayResults.firstChild) {
+    displayResults.removeChild(displayResults.firstChild);
+  }
 
   displayResults.appendChild(theRestaurant);
 
@@ -168,6 +175,10 @@ function restaurant(data) {
 function reviews(restaurant) {
   var reviewResults = document.getElementById('reviews');
 
+  while (reviewResults.firstChild) {
+    reviewResults.removeChild(reviewResults.firstChild);
+  }
+
   var header = document.createElement('h3');
   header.textContent = 'Start your own review for this business.'
 
@@ -182,7 +193,10 @@ function reviews(restaurant) {
   submit.className = 'btn btn-default',
   submit.setAttribute('type','submit');
   submit.setAttribute('href','#');
+  submit.setAttribute('id', 'submitReview');
+  submit.setAttribute('data-id', restaurant.id);
   submit.textContent = 'Submit Review';
+
 
   reviewResults.appendChild(header);
   reviewResults.appendChild(textArea);
