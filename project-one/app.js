@@ -150,7 +150,6 @@ function restaurant(data) {
   var imageArea = document.createElement('div');
 
   var restaurantPicture = document.createElement('img');
-
   restaurantPicture.src = data.image;
 
   var restaurantInfo = document.createElement('div');
@@ -182,8 +181,30 @@ function reviews(restaurant) {
   var header = document.createElement('h3');
   header.textContent = 'Start your own review for this business.'
 
+  var starRating = document.createElement('div');
+  starRating.className = 'stars';
+
+  for(var i = 1; i < 6; i++) {
+    var form = document.createElement('form');
+
+    var input = document.createElement('input');
+    input.className = 'star star-' + i;
+    input.setAttribute('value', i);
+    input.setAttribute('type', 'radio')
+
+    var label = document.createElement('label');
+    label.className = 'star star-' + i;
+    label.setAttribute('for', 'star-' + i);
+
+    form.appendChild(input);
+    form.appendChild(label);
+    starRating.appendChild(form);
+    reviewResults.appendChild(starRating);
+  }
+
   var textArea = document.createElement('textarea');
   textArea.className = 'form-control';
+  textArea.setAttribute('id', 'write');
   textArea.setAttribute('rows','10');
   textArea.setAttribute('placeholder', 'Start writing!');
 
@@ -202,6 +223,54 @@ function reviews(restaurant) {
   reviewResults.appendChild(textArea);
   buttonArea.appendChild(submit);
   reviewResults.appendChild(buttonArea);
+
+  submit.addEventListener('click', function(){
+    var write = document.getElementById('write').value;
+    var myReview = new Object();
+    myReview.user = '@alysiasaquil';
+    myReview.userIcon = 'alysia.jpg';
+    myReview.rating = '';
+    myReview.review = write;
+
+    restaurant.reviews.unshift(myReview);
+    console.log(myReview.review);
+
+    var reviewsArea = document.createElement('div');
+    reviewsArea.className = 'media';
+    reviewsArea.setAttribute('width', '300px');
+
+    var userPictureArea = document.createElement('div');
+    userPictureArea.setAttribute('class', 'media-left');
+
+    var userPictureIcon = document.createElement('img');
+    userPictureIcon.className = 'media-object';
+    userPictureIcon.setAttribute('width', '100px');
+    userPictureIcon.src = myReview.userIcon;
+
+    var rating = document.createElement('div');
+    rating.textContent = "User's Rating: " + myReview.rating;
+
+    var reviewInfo = document.createElement('div');
+    reviewInfo.setAttribute('class', 'media-body');
+
+    var reviewTitle = document.createElement('h4');
+    reviewTitle.setAttribute('class', 'media-heading');
+    reviewTitle.textContent = myReview.user + "'s Review";
+
+    var reviewText = document.createElement('p');
+    reviewText.setAttribute('width', '500px');
+    reviewText.textContent = myReview.review;
+
+    reviewInfo.appendChild(reviewTitle);
+    reviewInfo.appendChild(rating);
+    reviewInfo.appendChild(reviewText);
+    reviewsArea.appendChild(reviewInfo);
+
+    userPictureArea.appendChild(userPictureIcon);
+    reviewsArea.appendChild(userPictureArea);
+    reviewResults.appendChild(reviewsArea);
+
+  });
 
   for(var i = 0; i < restaurant.reviews.length; i++) {
 
