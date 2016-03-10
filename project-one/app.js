@@ -162,7 +162,9 @@ function restaurant(data) {
   var restaurantName = document.createElement('h1');
   restaurantName.textContent = data.name;
 
-  var restaurantDescription = document.createElement('p');
+
+
+  var restaurantDescription = document.createElement('h5');
   restaurantDescription.textContent = data.description;
 
   restaurantInfo.appendChild(restaurantDescription);
@@ -211,11 +213,29 @@ function reviews(restaurant) {
   submit.setAttribute('data-id', restaurant.id);
   submit.textContent = 'Submit Review';
 
+
+  var starRating = document.createElement('div');
+  starRating.className = 'stars';
+
+  var select = document.createElement('select');
+  select.setAttribute('id', 'rate');
+
+  for(var i = 1; i < 6; i++) {
+    var option = document.createElement('option');
+    option.setAttribute('value', i);
+    option.textContent = i + " stars";
+
+    select.appendChild(option);
+    starRating.appendChild(select);
+  }
+
   reviewResults.appendChild(header);
   reviewResults.appendChild(textArea);
   reviewResults.appendChild(addLocation);
+  reviewResults.appendChild(starRating);
   buttonArea.appendChild(submit);
   reviewResults.appendChild(buttonArea);
+
 
 //creating element to display list of reviews
   for(var i = 0; i < restaurant.reviews.length; i++) {
@@ -246,7 +266,7 @@ function reviews(restaurant) {
     reviewText.setAttribute('width', '500px');
     reviewText.textContent = restaurant.reviews[i].review;
 
-    var vote = document.createElement('p');
+    var vote = document.createElement('h5');
     vote.textContent = 'Vote this review...';
 
     var votingButtons = document.createElement('div');
@@ -305,7 +325,7 @@ function reviews(restaurant) {
     var myReview = new Object();
     myReview.user = '@alysiasaquil';
     myReview.userIcon = 'project-one-images/alysia.jpg';
-    myReview.rating = '';
+    myReview.rating = select.value + ' Stars';
     myReview.review = write;
 
     var location = document.getElementById('location').value;
