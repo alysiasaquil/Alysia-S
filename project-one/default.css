@@ -1,11 +1,27 @@
+@font-face {
+  font-family: 'ultra-thin';
+  src: url('./helvetica-neue-ultra-thin.otf') format('otf');
+}
+​
 body {
-  background-image: url(file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/project-one-images/city.png);
+  font-family: ultra-thin, sans-serif; !important;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.col-center {
+  margin: auto !important;
+  float: none !important;
+}
+
+.navbar-inverse .navbar-text {
   color: white;
 }
 
 #jumbotron {
   position: relative;
-  top: 300px;
   text-align: center;
 }
 
@@ -18,25 +34,15 @@ body {
   text-align: center;
 }
 
-.navbar-inverse .navbar-brand {
-  color: white;
-}
-
-.navbar-inverse .navbar-text {
-  color: white;
-}
-
-#results {
-  width: 900px;
-}
-
 #reviews {
-  600px;
-  margin-bottom: 200px;
+  width: 600px;
+  margin-bottom: 80px !important;
 }
+
+
 #restaurantPicture {
-  width: auto;
-  height: 600px;
+  width: 100%;
+  height: auto;
 }
 #write {
   width: 600px;
@@ -44,19 +50,9 @@ body {
 }
 
 #location {
-  width: 600px;
-  margin-bottom: 10px;
-}
-
-#starRating {
-  position: absolute;
-  left: 145px;
-  top: 321px;
-  width: 200px;
-  font-size: 18px;
   margin-bottom: 10px;
 }
 
 #star {
-  color: yellow;
+  color: rgb(251, 208, 49);
 }
