@@ -1,10 +1,26 @@
 @font-face {
-  font-family: 'ultra-thin';
-  src: url('./helvetica-neue-ultra-thin.otf') format('otf');
+  font-family: 'thin';
+  src: url(file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/fonts/helvetica-neue-thin.otf);
 }
-​
+
+@font-face {
+  font-family: 'ext';
+  src: url(file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/fonts/helvetica-neue-thin-ext.otf);
+}
+
 body {
-  font-family: ultra-thin, sans-serif; !important;
+  font-family: 'thin';
+  color: white;
+  background: url(file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/donut.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.white-bg {
+  background: #fff;
+  color: #545454;
 }
 
 .navbar-inverse .navbar-brand {
@@ -20,9 +36,35 @@ body {
   color: white;
 }
 
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+  font-family: 'ext', sans-serif;
+}
+
+.show-message {
+  display: none;
+}
+
+.media,
+.media-body {
+    color: #3E3E3E !important;
+    background: #EFEFEF !important;
+    padding: 10px !important;
+}
+
+#critic {
+  font-family: "ext";
+}
+
 #jumbotron {
-  position: relative;
+  position: absolute;
   text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #keyword {
@@ -36,9 +78,13 @@ body {
 
 #reviews {
   width: 600px;
+  color: #545454;
   margin-bottom: 80px !important;
 }
 
+#results {
+  color: #545454;
+}
 
 #restaurantPicture {
   width: 100%;

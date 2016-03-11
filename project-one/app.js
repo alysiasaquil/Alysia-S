@@ -4,24 +4,24 @@ var myRestaurants = [
     location: "Irvine, CA",
     rating: 5,
     id: 1,
-    image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/Ruths-Chris-Exterior-Night.jpeg",
+    image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/RuthsChris.jpg",
     description: "The best steakhouse in Irvine, California is Ruth's Chris Steak House. Treat yourself to a USDA Prime steak that arrives sizzling on a 500 degree plate.",
     reviews: [
       {
         user: "@Aaliyah",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/aaliyah.jpg",
         rating: 4,
         review: "Ruth's Chris Steak House by far is my favorite steakhouse. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this steakhouse was so hospitable, down to earth, and fun.",
       },
       {
         user: "@Yeezus",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/kanyewest.jpeg",
         rating: 1,
         review: "This place isn't good. I can make better steaks at home!!!",
       },
       {
         user: "@KendrickLamar",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/kendricklamar.jpg",
         rating: 5,
         review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!",
       }
@@ -32,24 +32,24 @@ var myRestaurants = [
     location: "Irvine, CA",
     rating: 4,
     id: 2,
-    image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/rest2.jpg",
+    image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/Brio.jpg",
     description: "At BRIO, we celebrate life, love & all things Italian!  In our restaurants, the chef-inspired cuisine at BRIO is simply prepared using the finest and freshest ingredients, with an emphasis on high-quality steaks, housemade pasta specialties and flatbreads prepared in an authentic Italian oven.",
     reviews: [
       {
         user: "@Beyonce",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/beyonce.jpg",
         rating: 4,
         review: "BRIO Tuscan Grille is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun.",
       },
       {
         user: "@Yeezus",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/kanyewest.jpeg",
         rating: 1,
         review: "This place isn't good. I can make better food at home!!!",
       },
       {
         user: "@KendrickLamar",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/kendricklamar.jpg",
         rating: 5,
         review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!",
       }
@@ -71,7 +71,7 @@ var myRestaurants = [
       },
       {
         user: "@ZacEfron",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/zacefron.jpeg",
         rating: 4,
         review: "Lazy Dog Restaurant & Bar is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun.",
       },
@@ -82,30 +82,30 @@ var myRestaurants = [
     location: "Irvine, CA",
     rating: 2,
     id: 4,
-    image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/rest3.jpg",
+    image: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/BJsBrewhouse.jpg",
     description: "Welcome to BJ's Restaurant & Brewhouse! We're the place to go when you're looking for amazing craft beer, delicious pizza selections, and an extensive menu of high quality food--all in a fun, casual, accommodating setting.",
     reviews: [
       {
         user: "@ZacEfron",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/zacefron.jpeg",
         rating: 5,
         review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!",
       },
       {
         user: "@Beyonce",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/beyonce.jpg",
         rating: 4,
         review: "BJ's is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun.",
       },
       {
         user: "@Yeezus",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/kanyewest.jpeg",
         rating: 1,
         review: "This place isn't good. I can make better pasta at home!!!",
       },
       {
         user: "@KendrickLamar",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/kendricklamar.jpg",
         rating: 5,
         review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!",
       }
@@ -116,10 +116,15 @@ var myRestaurants = [
 var jumbotron = document.createElement('div');
 jumbotron.setAttribute('id', 'jumbotron');
 var heading = document.createElement('h1');
-heading.textContent = " Welcome to critic";
+heading.textContent = " Welcome to ";
 var caption = document.createElement('h2');
-caption.textContent = "Discover the best places to eat, shop, or visit.";
+caption.textContent = "See what food critics are saying.";
 
+var critic = document.createElement('span');
+critic.setAttribute('id', 'critic');
+critic.textContent = "critic";
+
+heading.appendChild(critic);
 jumbotron.appendChild(heading);
 jumbotron.appendChild(caption);
 document.body.appendChild(jumbotron);
@@ -130,6 +135,7 @@ var search = document.getElementById('search');
 var keyword = document.getElementById('keyword');
 search.addEventListener('submit', function(event) {
   event.preventDefault();
+
   for (var i = 0; i < myRestaurants.length; i++) {
 
     if (myRestaurants[i].name === keyword.value) {
@@ -137,9 +143,9 @@ search.addEventListener('submit', function(event) {
       var myReviews = reviews(myRestaurants[i]);
       displayRestaurants(theRestaurant, myReviews);
     };
-  while(jumbotron.firstChild) {
-    jumbotron.removeChild(jumbotron.firstChild);
-  }
+    while(jumbotron.firstChild) {
+      jumbotron.removeChild(jumbotron.firstChild);
+    }
   }
 });
 
@@ -162,13 +168,18 @@ function displayRestaurants(theRestaurant, reviews) {
 
 function restaurant(data) {
   var theRestaurant = document.createElement('div');
+
   var imageArea = document.createElement('div');
+
   var restaurantPicture = document.createElement('img');
   restaurantPicture.src = data.image;
   restaurantPicture.setAttribute('id', 'restaurantPicture');
+
   var restaurantInfo = document.createElement('div');
+
   var restaurantName = document.createElement('h1');
   restaurantName.textContent = data.name;
+
   var restaurantDescription = document.createElement('h5');
   restaurantDescription.textContent = data.description;
 
@@ -257,7 +268,7 @@ function reviews(restaurant) {
     reviewsArea.setAttribute('width', '300px');
 
     var userPictureArea = document.createElement('div');
-    userPictureArea.setAttribute('class', 'media-left');
+    userPictureArea.setAttribute('class', 'media-left media-middle');
 
     var userPictureIcon = document.createElement('img');
     userPictureIcon.className = 'media-object img-circle';
@@ -305,35 +316,30 @@ function reviews(restaurant) {
     cool.setAttribute('class', 'btn btn-default inputVote');
     cool.textContent = "Cool";
 
-    var displayThanks = document.createElement('div');
+    var displayMessage = document.createElement('p');
+    displayMessage.textContent = "Thank you for your critique!";
+    displayMessage.setAttribute('class', 'show-message');
+    displayMessage.setAttribute('id', 'message');
 
     votingButtons.appendChild(useful);
     votingButtons.appendChild(funny);
     votingButtons.appendChild(cool);
-    votingButtons.appendChild(displayThanks);
 
     reviewInfo.appendChild(reviewTitle);
     reviewInfo.appendChild(rating);
     reviewInfo.appendChild(reviewText);
     reviewInfo.appendChild(vote);
     reviewInfo.appendChild(votingButtons);
+    reviewInfo.appendChild(displayMessage);
     reviewsArea.appendChild(reviewInfo);
 
     userPictureArea.appendChild(userPictureIcon);
     reviewsArea.appendChild(userPictureArea);
     reviewResults.appendChild(reviewsArea);
 
-    votingButtons.addEventListener('click', thankYou);
-
-    function thankYou(event) {
-      var groupButton = event.target.parentElement;
-      var thankyou = groupButton.getElementsByTagName('div')[0];
-
-      var displayMessage = document.createElement('p');
-      displayMessage.textContent = "Thank you for your critique!";
-      thankyou.appendChild(displayMessage);
-    }
-
+    votingButtons.addEventListener('click', function() {
+      $('#message').toggleClass('show');
+    });
   }
 
 // event listener to submit review
@@ -341,7 +347,7 @@ function reviews(restaurant) {
     var write = document.getElementById('write').value;
     var myReview = new Object();
     myReview.user = '@alysiasaquil';
-    myReview.userIcon = 'project-one-images/alysia.jpg';
+    myReview.userIcon = 'images/alysia.jpg';
     myReview.rating = select.value;
     myReview.review = write;
 

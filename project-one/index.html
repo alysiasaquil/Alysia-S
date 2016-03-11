@@ -4,41 +4,45 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>critic</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="default.css">
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="navbar navbar-inverse" id="navbar">
-          <div class="container-fluid">
-            <a class='navbar-brand' href="index.html">critic</a>
-            <p class="navbar-text">Start your search</p>
-            <form class="navbar-form navbar-left" id="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="I'm looking for..." id="keyword">
+    <div id="background">
+      <div class="container-fluid">
+        <div class="row">
+          <nav class="navbar navbar-inverse" id="navbar">
+            <div class="container-fluid">
+              <a class='navbar-brand' href="index.html">critic</a>
+              <p class="navbar-text">Start your search</p>
+              <form class="navbar-form navbar-left" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="I'm looking for..." id="keyword">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+              </form>
+            </div>
+          </nav>
+        </div>
+      </div>
+        <div class="container" >
+          <div class="row">
+            <div class="col-lg-8 col-center">
+              <div id="results">
               </div>
-              <button type="submit" class="btn btn-default">Search</button>
-            </form>
+            </div>
           </div>
-        </nav>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-center">
-          <div id="results">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 col-center">
-          <div id="reviews" class="col-center">
+          <div class="row">
+            <div class="col-lg-8 col-center">
+              <div id="reviews" class="col-center">
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
