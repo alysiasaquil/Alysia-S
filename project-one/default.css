@@ -1,5 +1,16 @@
+body {
+  background-image: url(file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/project-one-images/city.png);
+  color: white;
+}
+
+#jumbotron {
+  position: relative;
+  top: 300px;
+  text-align: center;
+}
+
 #keyword {
-  width: 300px;
+  width: 400px;
 }
 #searchBarPanel {
   padding: 10px;
@@ -7,7 +18,45 @@
   text-align: center;
 }
 
-#icons {
-  padding: 30px 0px 50px 0px;
-  word-spacing: 30px;
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse .navbar-text {
+  color: white;
+}
+
+#results {
+  width: 900px;
+}
+
+#reviews {
+  600px;
+  margin-bottom: 200px;
+}
+#restaurantPicture {
+  width: auto;
+  height: 600px;
+}
+#write {
+  width: 600px;
+  margin-bottom: 10px;
+}
+
+#location {
+  width: 600px;
+  margin-bottom: 10px;
+}
+
+#starRating {
+  position: absolute;
+  left: 145px;
+  top: 321px;
+  width: 200px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#star {
+  color: yellow;
 }

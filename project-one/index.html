@@ -3,34 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project One: RevMe</title>
-    <link rel="stylesheet" href="default.css">
+    <title>Project One: Yumma!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="default.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-6 col-lg-offset-3" id="searchBarPanel">
-          <div class="panel panel-default" >
-            <div class="panel-body">
-              <div id="icons">
-                <i class="fa fa-cutlery fa-2x"><br>eat</i>
-                <i class="fa fa-money fa-2x"><br>shop</i>
-                <i class="fa fa-glass fa-2x"><br>nightlife</i>
-                <i class="fa fa-fort-awesome fa-2x"><br>fun</i>
+        <nav class="navbar navbar-inverse" id="navbar">
+          <div class="container-fluid">
+            <a class='navbar-brand' href="index.html">theREVIEWERS</a>
+            <p class="navbar-text">Start your search</p>
+            <form class="navbar-form navbar-left" id="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="I'm looking for..." id="keyword">
               </div>
-              <form class="form-inline" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="I'm looking for..." id="keyword">
-                </div>
-                <button type="submit" class="btn btn-default">Search</button>
-              </form>
-            </div>
+              <button type="submit" class="btn btn-default">Search</button>
+            </form>
           </div>
-        </div>
+        </nav>
       </div>
+    </div>
+    <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
           <div id="results">
@@ -43,6 +38,7 @@
           </div>
         </div>
       </div>
-    <script src="app.js"></script>
+    </div>
+  <script src="app.js"></script>
   </body>
 </html>
