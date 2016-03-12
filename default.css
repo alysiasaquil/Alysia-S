@@ -1,17 +1,17 @@
 @font-face {
   font-family: 'thin';
-  src: url(file:///Users/alysiasaquil/critic/critic/fonts/helvetica-neue-thin.otf);
+  src: url(file:///Users/alysiasaquil/critic/fonts/helvetica-neue-thin.otf);
 }
 
 @font-face {
   font-family: 'ext';
-  src: url(file:///Users/alysiasaquil/critic/critic/fonts/helvetica-neue-thin-ext.otf);
+  src: url(file:///Users/alysiasaquil/critic/fonts/helvetica-neue-thin-ext.otf);
 }
 
 body {
   font-family: 'thin';
   color: white;
-  background: url(file:///Users/alysiasaquil/critic/critic/images/donut.jpg);
+  background: url(file:///Users/alysiasaquil/critic/images/donut.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;

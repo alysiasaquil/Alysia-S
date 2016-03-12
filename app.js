@@ -4,24 +4,24 @@ var myRestaurants = [
     location: "Irvine, CA",
     rating: 5,
     id: 1,
-    image: "file:///Users/alysiasaquil/critic/critic/images/RuthsChris.jpg",
+    image: "file:///Users/alysiasaquil/critic/images/RuthsChris.jpg",
     description: "The best steakhouse in Irvine, California is Ruth's Chris Steak House. Treat yourself to a USDA Prime steak that arrives sizzling on a 500 degree plate.",
     reviews: [
       {
         user: "@Aaliyah",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/aaliyah.jpg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/aaliyah.jpg",
         rating: 4,
         review: "Ruth's Chris Steak House by far is my favorite steakhouse. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this steakhouse was so hospitable, down to earth, and fun.",
       },
       {
         user: "@Yeezus",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/kanyewest.jpeg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/kanyewest.jpeg",
         rating: 1,
         review: "This place isn't good. I can make better steaks at home!!!",
       },
       {
         user: "@KendrickLamar",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/kendricklamar.jpg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/kendricklamar.jpg",
         rating: 5,
         review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!",
       }
@@ -32,24 +32,24 @@ var myRestaurants = [
     location: "Irvine, CA",
     rating: 4,
     id: 2,
-    image: "file:///Users/alysiasaquil/critic/critic/images/Brio.jpg",
+    image: "file:///Users/alysiasaquil/critic/images/Brio.jpg",
     description: "At BRIO, we celebrate life, love & all things Italian!  In our restaurants, the chef-inspired cuisine at BRIO is simply prepared using the finest and freshest ingredients, with an emphasis on high-quality steaks, housemade pasta specialties and flatbreads prepared in an authentic Italian oven.",
     reviews: [
       {
         user: "@Beyonce",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/beyonce.jpg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/beyonce.jpg",
         rating: 4,
         review: "BRIO Tuscan Grille is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun.",
       },
       {
         user: "@Yeezus",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/kanyewest.jpeg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/kanyewest.jpeg",
         rating: 1,
         review: "This place isn't good. I can make better food at home!!!",
       },
       {
         user: "@KendrickLamar",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/kendricklamar.jpg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/kendricklamar.jpg",
         rating: 5,
         review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!",
       }
@@ -60,18 +60,18 @@ var myRestaurants = [
     location: "Irvine, CA",
     rating: 3,
     id: 3,
-    image: "file:///Users/alysiasaquil/critic/critic/images/rest1.jpg",
+    image: "file:///Users/alysiasaquil/critic/images/rest1.jpg",
     description: "Lazy Dog Restaurant & Bar is a family-run Southern California based restaurant group.",
     reviews: [
       {
         user: "@Aaliyah",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/aaliyah.jpg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/aaliyah.jpg",
         rating: 4,
         review: "Lazy Dog Restaurant & Bar is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun.",
       },
       {
         user: "@ZacEfron",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/zacefron.jpeg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/zacefron.jpeg",
         rating: 4,
         review: "Lazy Dog Restaurant & Bar is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun.",
       },
@@ -82,30 +82,30 @@ var myRestaurants = [
     location: "Irvine, CA",
     rating: 2,
     id: 4,
-    image: "file:///Users/alysiasaquil/critic/critic/images/BJsBrewhouse.jpg",
+    image: "file:///Users/alysiasaquil/critic/images/BJsBrewhouse.jpg",
     description: "Welcome to BJ's Restaurant & Brewhouse! We're the place to go when you're looking for amazing craft beer, delicious pizza selections, and an extensive menu of high quality food--all in a fun, casual, accommodating setting.",
     reviews: [
       {
         user: "@ZacEfron",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/zacefron.jpeg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/zacefron.jpeg",
         rating: 5,
         review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!",
       },
       {
         user: "@Beyonce",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/beyonce.jpg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/beyonce.jpg",
         rating: 4,
         review: "BJ's is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun.",
       },
       {
         user: "@Yeezus",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/kanyewest.jpeg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/kanyewest.jpeg",
         rating: 1,
         review: "This place isn't good. I can make better pasta at home!!!",
       },
       {
         user: "@KendrickLamar",
-        userIcon: "file:///Users/alysiasaquil/critic/critic/images/kendricklamar.jpg",
+        userIcon: "file:///Users/alysiasaquil/critic/images/kendricklamar.jpg",
         rating: 5,
         review: "This place makes me happy because it's soooo good!  This is my favorite place!!!!",
       }
