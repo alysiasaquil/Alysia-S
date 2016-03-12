@@ -18,45 +18,56 @@ body {
   width: 100%;
 }
 
-.white-bg {
-  background: #fff;
-  color: #545454;
-}
-
-.navbar-inverse .navbar-brand {
-  color: white;
-}
-
-.col-center {
+/*.col-center {
   margin: auto !important;
   float: none !important;
+}*/
+
+.btn-default {
+  background-color: #FEDCD2;
+  border-color: #FEDCD2;
+  border-radius: 5px;
+  margin: 5px;
 }
 
-.navbar-inverse .navbar-text {
-  color: white;
+.navbar-default {
+  background-color: rgba(202, 228, 219, 0.3);
+  border: 0px;
+  border-radius: 0;
 }
 
-.navbar {
-    border-radius: 0;
-}
-
-.navbar-brand {
+.navbar-default .navbar-brand {
   font-family: 'ext', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: rgba(75, 109, 157, 0) !important;
 }
 
 .show-message {
   display: none;
 }
-
-.media,
-.media-body {
-    color: #3E3E3E !important;
-    background: #EFEFEF !important;
-    padding: 10px !important;
+.media {
+  margin-bottom: 10px;
 }
-
+.media-body,
+.media-left {
+  color: #3E3E3E !important;
+  background: rgba(202, 228, 219, 0.5) !important;
+  padding: 10px !important;
+}
+#welcome {
+  font-size: 60px;
+}
+#caption {
+  font-size:47px;
+}
+#submit,
 #critic {
   font-family: "ext";
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 #jumbotron {
@@ -70,34 +81,26 @@ body {
 #keyword {
   width: 400px;
 }
-#searchBarPanel {
-  padding: 10px;
-  margin-top: 50px;
-  text-align: center;
-}
 
 #reviews {
-  width: 600px;
   color: #545454;
   margin-bottom: 80px !important;
 }
 
 #results {
   color: #545454;
+  margin-bottom: 10px;
 }
 
-#restaurantPicture {
+/*#restaurantPicture {
   width: 100%;
   height: auto;
-}
-#write {
+}*/
+/*#write,
+#location {
   width: 600px;
   margin-bottom: 10px;
-}
-
-#location {
-  margin-bottom: 10px;
-}
+}*/
 
 #star {
   color: rgb(251, 208, 49);

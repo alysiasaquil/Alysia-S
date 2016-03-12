@@ -65,7 +65,7 @@ var myRestaurants = [
     reviews: [
       {
         user: "@Aaliyah",
-        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/nopic.jpg",
+        userIcon: "file:///Users/alysiasaquil/AlysiaSaquilabon/project-one/images/aaliyah.jpg",
         rating: 4,
         review: "Lazy Dog Restaurant & Bar is my favorite restaurant. The choice to go here was a  spur of the moment choice, on a double date. Im happy to say that the waiting staff at this restaurant was so hospitable, down to earth, and fun.",
       },
@@ -117,8 +117,10 @@ var jumbotron = document.createElement('div');
 jumbotron.setAttribute('id', 'jumbotron');
 var heading = document.createElement('h1');
 heading.textContent = " Welcome to ";
+heading.setAttribute('id', 'welcome');
 var caption = document.createElement('h2');
 caption.textContent = "See what food critics are saying.";
+caption.setAttribute('id', 'caption');
 
 var critic = document.createElement('span');
 critic.setAttribute('id', 'critic');
@@ -133,15 +135,20 @@ document.body.appendChild(jumbotron);
 
 var search = document.getElementById('search');
 var keyword = document.getElementById('keyword');
+var background = document.getElementsByTagName('body')[0];
+var brand = document.getElementsByTagName('a')[0];
 search.addEventListener('submit', function(event) {
   event.preventDefault();
+  background.setAttribute('style', 'background: url("")');
+  brand.setAttribute('style', 'color: #000000');
+  console.log(brand);
 
   for (var i = 0; i < myRestaurants.length; i++) {
 
-    if (myRestaurants[i].name === keyword.value) {
+    if (myRestaurants[i].name.toLowerCase() === keyword.value.toLowerCase()) {
       var theRestaurant = restaurant(myRestaurants[i]);
-      var myReviews = reviews(myRestaurants[i]);
-      displayRestaurants(theRestaurant, myReviews);
+      var theReviews = reviews(myRestaurants[i]);
+      displayRestaurants(theRestaurant, theReviews);
     };
     while(jumbotron.firstChild) {
       jumbotron.removeChild(jumbotron.firstChild);
@@ -173,7 +180,7 @@ function restaurant(data) {
 
   var restaurantPicture = document.createElement('img');
   restaurantPicture.src = data.image;
-  restaurantPicture.setAttribute('id', 'restaurantPicture');
+  restaurantPicture.setAttribute('class', 'img-responsive');
 
   var restaurantInfo = document.createElement('div');
 
@@ -202,15 +209,31 @@ function reviews(restaurant) {
     reviewResults.removeChild(reviewResults.firstChild);
   }
 
+  var reviewsHeader = document.createElement('h3');
+  reviewsHeader.textContent = "Reviews";
+  reviewsHeader.setAttribute('class', '');
+  reviewsHeader.setAttribute('style', 'font-size: 40px');
+
   var header = document.createElement('h3');
   header.textContent = 'Start your own review for this business.'
+  header.setAttribute('class', 'text-center');
 
 // code for writing your own review
+
+  var reviewsRow = document.createElement('div');
+  reviewsRow.className="row";
+
+  var textAreaFormGroup = document.createElement('div');
+  textAreaFormGroup.className = "form-group col-lg-8 col-lg-offset-2";
+
   var textArea = document.createElement('textarea');
   textArea.className = 'form-control';
   textArea.setAttribute('id', 'write');
   textArea.setAttribute('rows','10');
   textArea.setAttribute('placeholder', 'Start critiquing!');
+
+  var locationFormGroup = document.createElement('div');
+  locationFormGroup.className = "form-group col-lg-8 col-lg-offset-2";
 
   var addLocation = document.createElement('input');
   addLocation.setAttribute('id', 'location');
@@ -218,7 +241,8 @@ function reviews(restaurant) {
   addLocation.setAttribute('class', 'form-control');
   addLocation.setAttribute('placeholder', 'Add Your Location');
 
-  var buttonArea = document.createElement('div');
+  var buttonFormGroup = document.createElement('div');
+  buttonFormGroup.className = "form-group col-lg-6 col-lg-offset-2";
 
   var submit = document.createElement('button');
   submit.className = 'btn btn-default',
@@ -228,15 +252,14 @@ function reviews(restaurant) {
   submit.setAttribute('data-id', restaurant.id);
   submit.textContent = 'Submit Review';
 
-  var ratingText = document.createElement('h5');
-  ratingText.textContent = "Rate this business: ";
-
-  var starRating = document.createElement('div');
-  starRating.className = 'stars';
-  starRating.setAttribute('id', 'starRating');
+  var selectFormGroup = document.createElement('div');
+  selectFormGroup.className = "form-group col-lg-8 col-lg-offset-2";
 
   var select = document.createElement('select');
   select.setAttribute('id', 'rate');
+
+  var ratingText = document.createElement('h5');
+  ratingText.textContent = "Rate this business: ";
 
   for(var i = 1; i < 6; i++) {
     var option = document.createElement('option');
@@ -244,16 +267,19 @@ function reviews(restaurant) {
     option.textContent = i;
 
     select.appendChild(option);
-    starRating.appendChild(select);
-    ratingText.appendChild(starRating)
   }
 
-  reviewResults.appendChild(header);
-  reviewResults.appendChild(textArea);
-  reviewResults.appendChild(addLocation);
-  reviewResults.appendChild(ratingText);
-  buttonArea.appendChild(submit);
-  reviewResults.appendChild(buttonArea);
+  reviewsRow.appendChild(header);
+  textAreaFormGroup.appendChild(textArea);
+  reviewsRow.appendChild(textAreaFormGroup);
+  locationFormGroup.appendChild(addLocation);
+  reviewsRow.appendChild(locationFormGroup);
+  selectFormGroup.appendChild(ratingText);
+  selectFormGroup.appendChild(select);
+  reviewsRow.appendChild(selectFormGroup);
+  buttonFormGroup.appendChild(submit);
+  reviewsRow.appendChild(buttonFormGroup);
+  reviewResults.appendChild(reviewsHeader);
 
 
 //creating element to display list of reviews
@@ -294,32 +320,28 @@ function reviews(restaurant) {
     vote.textContent = 'Vote this review...';
 
     var votingButtons = document.createElement('div');
-    votingButtons.className = 'btn-group';
-    votingButtons.setAttribute('role', 'group');
-    votingButtons.setAttribute('aria-label', 'buttonGroup');
 
     var useful = document.createElement('button');
     useful.setAttribute('type', 'button');
-    useful.setAttribute('id', 'useful');
+    useful.setAttribute('data-type', 'useful');
     useful.setAttribute('class', 'btn btn-default inputVote');
     useful.textContent = "Useful";
 
     var funny = document.createElement('button');
     funny.setAttribute('type', 'button');
-    funny.setAttribute('id', 'funny');
+    funny.setAttribute('data-type', 'funny');
     funny.setAttribute('class', 'btn btn-default inputVote');
     funny.textContent = "Funny";
 
     var cool = document.createElement('button');
     cool.setAttribute('type', 'button');
-    cool.setAttribute('id', 'cool');
+    cool.setAttribute('data-type', 'cool');
     cool.setAttribute('class', 'btn btn-default inputVote');
     cool.textContent = "Cool";
 
     var displayMessage = document.createElement('p');
     displayMessage.textContent = "Thank you for your critique!";
     displayMessage.setAttribute('class', 'show-message');
-    displayMessage.setAttribute('id', 'message');
 
     votingButtons.appendChild(useful);
     votingButtons.appendChild(funny);
@@ -337,13 +359,20 @@ function reviews(restaurant) {
     reviewsArea.appendChild(userPictureArea);
     reviewResults.appendChild(reviewsArea);
 
-    votingButtons.addEventListener('click', function() {
-      $('#message').toggleClass('show');
+    votingButtons.addEventListener('click', function(event) {
+      if (event.target.getAttribute("type") === "button") {
+
+        var parent = event.target.parentElement;
+        var grandParent = parent.parentElement;
+        var message = grandParent.getElementsByClassName('show-message')[0];
+        $(message).toggleClass('show');
+      }
     });
+    reviewResults.appendChild(reviewsRow);
   }
 
 // event listener to submit review
-  submit.addEventListener('click', function(){
+  submit.addEventListener('click', function(event){
     var write = document.getElementById('write').value;
     var myReview = new Object();
     myReview.user = '@alysiasaquil';
@@ -358,9 +387,9 @@ function reviews(restaurant) {
     restaurant.reviews.unshift(myReview);
 
 //creating element to display own review
-    var reviewsArea = document.createElement('div');
-    reviewsArea.className = 'media';
-    reviewsArea.setAttribute('width', '300px');
+    var ownReviewArea = document.createElement('div');
+    ownReviewArea.className = 'media';
+    ownReviewArea.setAttribute('width', '300px');
 
     var userPictureArea = document.createElement('div');
     userPictureArea.setAttribute('class', 'media-left');
@@ -392,12 +421,11 @@ function reviews(restaurant) {
     reviewInfo.appendChild(rating);
     reviewInfo.appendChild(locationText);
     reviewInfo.appendChild(reviewText);
-    reviewsArea.appendChild(reviewInfo);
+    ownReviewArea.appendChild(reviewInfo);
 
     userPictureArea.appendChild(userPictureIcon);
-    reviewsArea.appendChild(userPictureArea);
-    reviewResults.appendChild(reviewsArea);
-
+    ownReviewArea.appendChild(userPictureArea);
+    reviewResults.appendChild(ownReviewArea);
   });
   return reviewResults;
 };
