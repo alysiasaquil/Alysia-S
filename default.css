@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'thin';
+  src: url(file:///Users/alysiasaquil/critic/critic/fonts/helvetica-neue-thin.otf);
+}
+
+@font-face {
+  font-family: 'ext';
+  src: url(file:///Users/alysiasaquil/critic/critic/fonts/helvetica-neue-thin-ext.otf);
+}
+
+body {
+  font-family: 'thin';
+  color: white;
+  background: url(file:///Users/alysiasaquil/critic/critic/images/donut.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+/*.col-center {
+  margin: auto !important;
+  float: none !important;
+}*/
+
+.btn-default {
+  background-color: #FEDCD2;
+  border-color: #FEDCD2;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.navbar-default {
+  background-color: rgba(202, 228, 219, 0.3);
+  border: 0px;
+  border-radius: 0;
+}
+
+.navbar-default .navbar-brand {
+  font-family: 'ext', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: rgba(75, 109, 157, 0) !important;
+}
+
+.show-message {
+  display: none;
+}
+.media {
+  margin-bottom: 10px;
+}
+.media-body,
+.media-left {
+  color: #3E3E3E !important;
+  background: rgba(202, 228, 219, 0.5) !important;
+  padding: 10px !important;
+}
+#welcome {
+  font-size: 60px;
+}
+#caption {
+  font-size:47px;
+}
+#submit,
+#critic {
+  font-family: "ext";
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#jumbotron {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#keyword {
+  width: 400px;
+}
+
+#reviews {
+  color: #545454;
+  margin-bottom: 80px !important;
+}
+
+#results {
+  color: #545454;
+  margin-bottom: 10px;
+}
+
+/*#restaurantPicture {
+  width: 100%;
+  height: auto;
+}*/
+/*#write,
+#location {
+  width: 600px;
+  margin-bottom: 10px;
+}*/
+
+#star {
+  color: rgb(251, 208, 49);
+}
