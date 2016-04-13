@@ -8,6 +8,12 @@ View live demo here: http://alysiasaquil-critic.herokuapp.com/index.html
 ![Home] (https://raw.githubusercontent.com/alysiasaquil/critic/master/images/homepage.png)
 
 **Restaurant Page**
+
+Restaurants to search:
+- Ruth's Chris Steak House
+- Brio Tuscan Grille
+- BJ's Restaurant & Brewhouse
+- Lazy Dog Restaurant & Bar
 ![Restaurant] (https://raw.githubusercontent.com/alysiasaquil/critic/master/images/restaurant-display.png)
 
 **Restaurant Review Section**
