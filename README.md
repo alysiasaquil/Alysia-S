@@ -2,17 +2,18 @@
 
 This is a website where users can write reviews on restaurants.
 
-View live demo here: http://alysiasaquil-critic.herokuapp.com/
+[Click to view a live demo of critic on Heroku] (http://alysiasaquil-critic.herokuapp.com/)
 
-**Home Page**
-![Home] (https://raw.githubusercontent.com/alysiasaquil/critic/master/images/homepage.png)
-
-**Restaurant Page**
 Restaurants to search:
 - Ruth's Chris Steak House
 - Brio Tuscan Grille
 - BJ's Restaurant & Brewhouse
 - Lazy Dog Restaurant & Bar
+
+**Home Page**
+![Home] (https://raw.githubusercontent.com/alysiasaquil/critic/master/images/homepage.png)
+
+**Restaurant Page**
 
 ![Restaurant] (https://raw.githubusercontent.com/alysiasaquil/critic/master/images/restaurant-display.png)
 
